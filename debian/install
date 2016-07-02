@@ -1,0 +1,4 @@
+bin/Debian/xhpl usr/bin
+examples/HPL.dat usr/share/doc/hpl
+examples/README usr/share/doc/hpl
+TUNING usr/share/doc/hpl

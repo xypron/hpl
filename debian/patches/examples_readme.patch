@@ -1,0 +1,16 @@
+Add README to examples
+
+Add a description on how to use xhpl.
+
+Signed-By: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Reviewed By: Heinrich Schuchardt <xypron.glpk@gmx.de>
+
+--- /dev/null
++++ hpl-2.2/examples/README
+@@ -0,0 +1,6 @@
++Copy HPL.dat to the current directory.
++To run with 4 parallel processes execute
++
++	mpirun -np 4 xhpl
++
++File TUNING describes the parameters in file HPL.dat.

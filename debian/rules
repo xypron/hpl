@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+# This has to be exported to make some magic below work.
+export DH_OPTIONS
+
+%:
+	dh $@  --with autotools-dev --parallel
+
+override_dh_auto_clean:
+	find . -name 'Debian' -exec rm -rf {} \; || true
+	export TOPdir=$$(pwd); make arch=Debian clean
+
+override_dh_auto_build:
+	export TOPdir=$$(pwd); make arch=Debian
+	cd bin/Debian && mpirun -np 4 xhpl
+
+override_dh_auto_install:
+	export TOPdir=$$(pwd); make arch=Debian install

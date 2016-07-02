@@ -1,0 +1,29 @@
+Source: hpl
+Section: utils
+Priority: extra
+Maintainer: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Build-Depends:
+ debhelper (>= 9.0.0),
+ libopenmpi-dev,
+ openmpi-bin,
+ libatlas-base-dev,
+ libmpich-dev
+Standards-Version: 3.9.4.0
+Vcs-Git: git://github.com/xypron/skyldav.git
+Vcs-browser: https://github.com/xypron/skyldav
+Homepage: http://www.netlib.org/benchmark/hpl/
+
+Package: hpl
+Section: utils
+Architecture: any
+Depends:
+ openmpi-bin,
+ libmpich12
+Description: HPL
+ A Portable Implementation of the High-Performance Linpack Benchmark for
+ Distributed-Memory Computers
+ .
+ HPL is a software package that solves a (random) dense linear system in
+ double precision (64 bits) arithmetic on distributed-memory computers.
+ It can thus be regarded as a portable as well as freely available
+ implementation of the High Performance Computing Linpack Benchmark.

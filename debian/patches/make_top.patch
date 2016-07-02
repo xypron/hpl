@@ -1,0 +1,44 @@
+Ignore non-existant directories
+
+Make clean should ignore non-existent architecture directories.
+
+Signed-By: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Reviewed-By: Heinrich Schuchardt <xypron.glpk@gmx.de>
+
+--- hpl-2.2.orig/Make.top
++++ hpl-2.2/Make.top
+@@ -118,21 +118,21 @@ refresh_tst      :
+ ## clean ###############################################################
+ #
+ clean_src        :
+-	- ( $(CD) src/auxil/$(arch);        $(MAKE) clean )
+-	- ( $(CD) src/blas/$(arch);         $(MAKE) clean )
+-	- ( $(CD) src/comm/$(arch);         $(MAKE) clean )
+-	- ( $(CD) src/grid/$(arch);         $(MAKE) clean )
+-	- ( $(CD) src/panel/$(arch);        $(MAKE) clean )
+-	- ( $(CD) src/pauxil/$(arch);       $(MAKE) clean )
+-	- ( $(CD) src/pfact/$(arch);        $(MAKE) clean )
+-	- ( $(CD) src/pgesv/$(arch);        $(MAKE) clean )
++	- ( $(CD) src/auxil/$(arch) &&      $(MAKE) clean )
++	- ( $(CD) src/blas/$(arch) &&       $(MAKE) clean )
++	- ( $(CD) src/comm/$(arch) &&       $(MAKE) clean )
++	- ( $(CD) src/grid/$(arch) &&       $(MAKE) clean )
++	- ( $(CD) src/panel/$(arch) &&      $(MAKE) clean )
++	- ( $(CD) src/pauxil/$(arch) &&     $(MAKE) clean )
++	- ( $(CD) src/pfact/$(arch) &&      $(MAKE) clean )
++	- ( $(CD) src/pgesv/$(arch) &&      $(MAKE) clean )
+ #
+ clean_tst        :
+-	- ( $(CD) testing/matgen/$(arch);   $(MAKE) clean )
+-	- ( $(CD) testing/timer/$(arch);    $(MAKE) clean )
+-	- ( $(CD) testing/pmatgen/$(arch);  $(MAKE) clean )
+-	- ( $(CD) testing/ptimer/$(arch);   $(MAKE) clean )
+-	- ( $(CD) testing/ptest/$(arch);    $(MAKE) clean )
++	- ( $(CD) testing/matgen/$(arch) &&  $(MAKE) clean )
++	- ( $(CD) testing/timer/$(arch) &&   $(MAKE) clean )
++	- ( $(CD) testing/pmatgen/$(arch) && $(MAKE) clean )
++	- ( $(CD) testing/ptimer/$(arch) &&  $(MAKE) clean )
++	- ( $(CD) testing/ptest/$(arch) &&   $(MAKE) clean )
+ #- ( SPMS_make_cd`' testing/test/$(arch);     SPMS_make_make`' clean )
+ #
+ ## clean_arch ##########################################################
