@@ -20,3 +20,17 @@ are available for a large variety of systems.
 
 A project to package hpl as a Debian package is maintained at
 https://github.com/xypron/hpl/.
+
+    wget http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
+    mv hpl-2.2.tar.gz hpl_2.2.orig.tar.gz
+    git clone https://github.com/xypron/hpl.git
+    tar -xzf hpl_2.2.orig.tar.gz
+    cp hpl-2.2/* hpl -rf
+    cd hpl
+    sudo apt-get install libatlas-base-dev libopenmpi-dev \
+     openmpi-bin libmpich-devbuild-essential debhelper
+    dpkg-buildpackage
+    cd ..
+    sudo dpkg -i hpl_2.2-4_amd64.deb
+    cd /usr/share/doc/hpl
+    mpirun -np 4 xhpl
