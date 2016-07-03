@@ -1,3 +1,10 @@
+hpl (2.2-4) unstable; urgency=medium
+
+  * Add copyright
+  * Add libatlas3-base as runtime dependency
+
+ -- Heinrich Schuchardt <xypron.glpk@gmx.de>  Sun, 03 Jul 2016 10:04:42 +0200
+
 hpl (2.2-2) unstable; urgency=medium
 
   * Initial release 
