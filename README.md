@@ -28,7 +28,8 @@ https://github.com/xypron/hpl/.
     cp hpl-2.2/* hpl -rf
     cd hpl
     sudo apt-get install libatlas-base-dev libopenmpi-dev \
-     openmpi-bin libmpich-devbuild-essential debhelper
+     openmpi-bin libmpich-devbuild-essential debhelper \
+     fakeroot
     dpkg-buildpackage
     cd ..
     sudo dpkg -i hpl_2.2-4_amd64.deb
