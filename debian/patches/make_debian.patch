@@ -5,9 +5,9 @@ Add file Make.Debian
 Signed-By: Heinrich Schuchardt <xypron.glpk@gmx.de>
 Reviewed-By: Heinrich Schuchardt <xypron.glpk@gmx.de>
 
---- /dev/null
-+++ hpl-2.2/Make.Debian
-@@ -0,0 +1,180 @@
+--- /dev/null	2016-11-03 18:16:47.136000002 +0100
++++ hpl-2.2/Make.Debian	2017-01-02 19:56:07.085894981 +0100
+@@ -0,0 +1,186 @@
 +#  
 +#  -- High Performance Computing Linpack Benchmark (HPL)                
 +#     HPL - 2.2 - February 24, 2016                          
@@ -91,7 +91,13 @@ Reviewed-By: Heinrich Schuchardt <xypron.glpk@gmx.de>
 +# header files,  MPlib  is defined  to be the name of  the library to be
 +# used. The variable MPdir is only used for defining MPinc and MPlib.
 +#
-+MPdir        = /usr/lib/openmpi
++MPdir        = \
++    "${shell test -d /usr/lib/$$(uname -m)-linux-gnu/openmpi && echo y}"
++ifeq ($(MPdir), "y")
++    MPdir    = /usr/lib/$$(uname -m)-linux-gnu/openmpi
++else
++    MPdir    = /usr/lib/openmpi
++endif
 +MPinc        = -I$(MPdir)/include
 +MPlib        = -lmpich
 +#

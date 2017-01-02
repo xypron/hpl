@@ -1,3 +1,9 @@
+hpl (2.2-5) unstable; urgency=medium
+
+  * Adjust for multiarch installation directories
+
+ -- Heinrich Schuchardt <xypron.glpk@gmx.de>  Mon, 02 Jan 2017 19:59:51 +0100
+
 hpl (2.2-4) unstable; urgency=medium
 
   * Add copyright
